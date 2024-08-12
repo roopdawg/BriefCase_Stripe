@@ -103,8 +103,6 @@ if page == "Monthly Subscription":
             """.format(stripe_publishable_key)
             # user next steps for payment
             st.write("Thanks for confirming the terms and conditions!")
-            st.write("""""")
-            st.title("Payment")
             html(stripe_js)
         
 
@@ -130,8 +128,6 @@ elif page == "Annual Subscription":
             """.format(stripe_publishable_key)
             # user next steps for payment
             st.write("Thanks for confirming the terms and conditions!")
-            st.write("""""")
-            st.title("Payment")
             html(stripe_js)
             #st.image("beach_payment.png", caption="Scan the QR code to pay")
             #url = "https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC"
