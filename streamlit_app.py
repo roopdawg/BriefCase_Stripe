@@ -92,7 +92,7 @@ if page == "Monthly Subscription":
     if terms_state:
        confirm_button = st.button("Confirm & Pay", disabled=not terms_state)
         # Show the modal with the legal terms when the terms button is clicked
-        if confirm_button:
+       if confirm_button:
             terms_state = False
             conn.commit()
             conn.close()
@@ -121,7 +121,7 @@ elif page == "Annual Subscription":
     if terms_state:
        confirm_button = st.button("Confirm & Pay", disabled=not terms_state)
         # Show the modal with the legal terms when the terms button is clicked
-        if confirm_button:
+       if confirm_button:
             terms_state = False
             conn.commit()
             conn.close()
