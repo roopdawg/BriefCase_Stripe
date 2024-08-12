@@ -119,17 +119,17 @@ elif page == "Annual Subscription":
         # Show the modal with the legal terms when the terms button is clicked
        if confirm_button:
           terms_state = False
-          with st.container():
-               stripe_js = """
-               <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-               <stripe-buy-button
-               buy-button-id="buy_btn_1PmkwhBqWfU9o3QlQwEd8Nso"
-               publishable-key="pk_live_51PmkRJBqWfU9o3Ql8aJH7gsPYqjWE7BvMU2pQpjyrfcsGEyFFbpDZt7yBiKbPwDYc4x2e2Tyx7KulO4VjsfoKDM400QrGD3Ylj"
-               ></stripe-buy-button>
-               """.format(stripe_publishable_key)
-               # user next steps for payment
-               st.write("Thanks for confirming the terms and conditions!")
-               html(stripe_js)
+          stripe_js = """
+          <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+          <stripe-buy-button
+          buy-button-id="buy_btn_1PmkwhBqWfU9o3QlQwEd8Nso"
+          publishable-key="pk_live_51PmkRJBqWfU9o3Ql8aJH7gsPYqjWE7BvMU2pQpjyrfcsGEyFFbpDZt7yBiKbPwDYc4x2e2Tyx7KulO4VjsfoKDM400QrGD3Ylj"
+          ></stripe-buy-button>
+          """.format(stripe_publishable_key)
+          # user next steps for payment
+          st.write("Thanks for confirming the terms and conditions!")
+          html(stripe_js)
+          components.iframe(stripe_js,width = 300,height = 500, scrolling=True)
             #st.image("beach_payment.png", caption="Scan the QR code to pay")
             #url = "https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC"
             #link='Pay wit BTC [via this link](https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC)'
