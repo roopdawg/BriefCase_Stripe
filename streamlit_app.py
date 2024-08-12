@@ -84,7 +84,8 @@ page = st.sidebar.radio("Go to", ("Monthly Subscription", "Annual Subscription",
 # First Subscription option 
 if page == "Monthly Subscription":
     st.title("Renew your BriefCase subscription on a monthly basis")
-    st.expander("View & Confirm Agreement")
+    with st.expander("View & Confirm Agreement"):
+        st.markdown(terms_and_conditions)
     if st.checkbox("I agree to the Terms and Conditions", value=terms_state):
             terms_state = True
 
@@ -109,7 +110,8 @@ if page == "Monthly Subscription":
 # Second subscription option 
 elif page == "Annual Subscription":
     st.title("Renew your BriefCase subscription annually")
-    st.expander("View & Confirm Agreement")
+    with st.expander("View & Confirm Agreement"):
+        st.markdown(terms_and_conditions)
     if st.checkbox("I agree to the Terms and Conditions", value=terms_state):
             terms_state = True
 
@@ -129,7 +131,7 @@ elif page == "Annual Subscription":
           # user next steps for payment
           st.write("Thanks for confirming the terms and conditions!")
           html(stripe_js)
-          components.iframe(stripe_js,width = 300,height = 500, scrolling=True)
+          st.components.v1.html(stripe_js, height=200)
             #st.image("beach_payment.png", caption="Scan the QR code to pay")
             #url = "https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC"
             #link='Pay wit BTC [via this link](https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC)'
