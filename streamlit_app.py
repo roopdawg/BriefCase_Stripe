@@ -79,7 +79,7 @@ st.set_page_config(
 
 # Sidebar navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ("Monthly Subscription", "Annual Subscription", "Terms & Conditions"))
+page = st.sidebar.radio("Go to", ("Monthly Subscription", "Annual Subscription", "Review our Terms & Conditions"))
 
 # First Subscription option 
 if page == "Annual Subscription":
