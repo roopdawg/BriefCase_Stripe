@@ -82,8 +82,8 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ("Monthly Subscription", "Annual Subscription", "Terms & Conditions"))
 
 # First Subscription option 
-if page == "Monthly Subscription":
-    st.title("Renew your BriefCase subscription on a monthly basis")
+if page == "Annual Subscription":
+    st.title("Renew your BriefCase subscription once a year")
     with st.expander("View & Confirm Agreement"):
         st.markdown(terms_and_conditions)
     if st.checkbox("I agree to the Terms and Conditions", value=terms_state):
@@ -95,7 +95,7 @@ if page == "Monthly Subscription":
         # Show the modal with the legal terms when the terms button is clicked
        if confirm_button:
             terms_state = False
-            stripe_js = """
+            stripe_js_annual = """
             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
             <stripe-buy-button
             buy-button-id="buy_btn_1Pmld7BqWfU9o3QlYb7IJn04"	
@@ -104,12 +104,12 @@ if page == "Monthly Subscription":
             """.format(stripe_publishable_key)
             # user next steps for payment
             st.write("Thanks for confirming the terms and conditions!")
-            html(stripe_js)
+            st.components.v1.html(stripe_js_annual, height=400)
         
 
 # Second subscription option 
-elif page == "Annual Subscription":
-    st.title("Renew your BriefCase subscription annually")
+elif page == "Monthly Subscription":
+    st.title("Renew your BriefCase subscription on a monthly basis:")
     with st.expander("View & Confirm Agreement"):
         st.markdown(terms_and_conditions)
     if st.checkbox("I agree to the Terms and Conditions", value=terms_state):
@@ -121,7 +121,7 @@ elif page == "Annual Subscription":
         # Show the modal with the legal terms when the terms button is clicked
        if confirm_button:
           terms_state = False
-          stripe_js = """
+          stripe_js_monthly = """
           <script async src="https://js.stripe.com/v3/buy-button.js"></script>
           <stripe-buy-button
           buy-button-id="buy_btn_1PmkwhBqWfU9o3QlQwEd8Nso"
@@ -130,7 +130,7 @@ elif page == "Annual Subscription":
           """.format(stripe_publishable_key)
           # user next steps for payment
           st.write("Thanks for confirming the terms and conditions!")
-          st.components.v1.html(stripe_js, height=400)
+          st.components.v1.html(stripe_js_monthly, height=400)
             #st.image("beach_payment.png", caption="Scan the QR code to pay")
             #url = "https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC"
             #link='Pay wit BTC [via this link](https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC)'
@@ -138,5 +138,5 @@ elif page == "Annual Subscription":
             #components.iframe(url,width = 300,height = 500, scrolling=True)
    
 # Terms & Conditions page
-if page == "Terms & Conditions":
+if page == "Review our Terms & Conditions":
         st.info(terms_and_conditions)
