@@ -99,7 +99,7 @@ if page == "Annual Subscription":
             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
             <stripe-buy-button
             buy-button-id="buy_btn_1Pmld7BqWfU9o3QlYb7IJn04"	
-            publishable-key=stripe_publishable_key
+            publishable-key="pk_live_51PmkRJBqWfU9o3Ql8aJH7gsPYqjWE7BvMU2pQpjyrfcsGEyFFbpDZt7yBiKbPwDYc4x2e2Tyx7KulO4VjsfoKDM400QrGD3Ylj"
             ></stripe-buy-button>
             """.format(stripe_publishable_key)
             # user next steps for payment
@@ -125,7 +125,7 @@ elif page == "Monthly Subscription":
           <script async src="https://js.stripe.com/v3/buy-button.js"></script>
           <stripe-buy-button
           buy-button-id="buy_btn_1PmkwhBqWfU9o3QlQwEd8Nso"
-          publishable-key=stripe_publishable_key
+          publishable-key="pk_live_51PmkRJBqWfU9o3Ql8aJH7gsPYqjWE7BvMU2pQpjyrfcsGEyFFbpDZt7yBiKbPwDYc4x2e2Tyx7KulO4VjsfoKDM400QrGD3Ylj"
           ></stripe-buy-button>
           """.format(stripe_publishable_key)
           # user next steps for payment
