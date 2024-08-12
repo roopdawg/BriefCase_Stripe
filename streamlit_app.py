@@ -94,8 +94,6 @@ if page == "Monthly Subscription":
         # Show the modal with the legal terms when the terms button is clicked
        if confirm_button:
             terms_state = False
-            conn.commit()
-            conn.close()
             stripe_js = """
             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
             <stripe-buy-button
@@ -123,8 +121,6 @@ elif page == "Annual Subscription":
         # Show the modal with the legal terms when the terms button is clicked
        if confirm_button:
             terms_state = False
-            conn.commit()
-            conn.close()
             stripe_js = """
             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
             <stripe-buy-button
