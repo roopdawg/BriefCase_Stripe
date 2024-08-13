@@ -104,7 +104,7 @@ if page == "Annual Subscription":
             """.format(stripe_publishable_key)
             # user next steps for payment
             st.write("Thanks for confirming the terms and conditions!") 
-            st.write("Once your payment has been processed you will receive a link to BriefCase by 9 am PST the following day to the email associated with your payment.")
+            st.write("Once your payment has been processed you will receive a link to BriefCase by 9 am PST the following day. The BriefCase link will be emailed to the email address you associated with your subscription.")
             st.write("Please note that you will only be able to access BriefCase while logged into the email you provide for payment. If you'd like to link a different email to BriefCase instead, please contact support@luri.ai.")
             st.components.v1.html(stripe_js_annual, height=400)
         
@@ -132,6 +132,8 @@ elif page == "Monthly Subscription":
           """.format(stripe_publishable_key)
           # user next steps for payment
           st.write("Thanks for confirming the terms and conditions!")
+          st.write("Once your payment has been processed you will receive a link to BriefCase by 9 am PST the following day. The BriefCase link will be emailed to the email address you associated with your subscription.")
+          st.write("Please note that you will only be able to access BriefCase while logged into the email you provide for payment. If you'd like to link a different email to BriefCase instead, please contact support@luri.ai.")
           st.components.v1.html(stripe_js_monthly, height=400)
             #st.image("beach_payment.png", caption="Scan the QR code to pay")
             #url = "https://mainnet.demo.btcpayserver.org/api/v1/invoices?storeId=4r8DKKKMkxGPVKcW9TXB2eta7PTVzzs192TWM3KuY52e&price=100&currency=USD&defaultPaymentMethod=BTC"
