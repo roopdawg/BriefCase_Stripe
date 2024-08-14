@@ -84,6 +84,17 @@ page = st.sidebar.radio("Go to", ("Monthly Subscription", "Annual Subscription",
 # First Subscription option 
 if page == "Annual Subscription":
     st.title("Renew your BriefCase subscription once a year")
+    # CSS for scrolling expander
+    expander_css = '''
+    <style>
+        [data-testid="stExpander"] div:has(>.streamlit-expanderContent) {
+            overflow: scroll;
+            height: 400px;
+        }
+    </style>
+    '''
+    st.markdown(expander_css, unsafe_allow_html=True)
+
     with st.expander("View & Confirm Agreement"):
         st.markdown(terms_and_conditions)
     if st.checkbox("I agree to the Terms and Conditions", value=terms_state):
