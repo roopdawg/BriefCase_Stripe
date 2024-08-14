@@ -92,6 +92,7 @@ page = st.sidebar.radio("Go to", ("Monthly Subscription", "Annual Subscription",
 # First Subscription option 
 if page == "Annual Subscription":
     st.title("Renew your BriefCase subscription once a year")
+    st.subheader("Follow us on Instagram and comment LURI.AI on any of our posts for a promo code for 2 free weeks of BriefCase!")
     with st.expander("View & Confirm Agreement"):
         with st.container(height=300):  # Create a scrollable container
             st.markdown(terms_and_conditions)
@@ -122,8 +123,10 @@ if page == "Annual Subscription":
 # Second subscription option 
 elif page == "Monthly Subscription":
     st.title("Renew your BriefCase subscription on a monthly basis:")
+    st.subheader("Follow us on Instagram and comment LURI.AI on any of our posts for a promo code for 2 free weeks of BriefCase!")
     with st.expander("View & Confirm Agreement"):
-        st.markdown(terms_and_conditions)
+        with st.container(height=300):  # Create a scrollable container
+            st.markdown(terms_and_conditions)
     if st.checkbox("I agree to the Terms and Conditions", value=terms_state):
             terms_state = True
 
