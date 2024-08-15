@@ -96,7 +96,8 @@ page = st.sidebar.radio("Go to", ("Monthly Subscription", "Review our Terms & Co
 # Monthly subscription option 
 if page == "Monthly Subscription":
     st.title("Renew your BriefCase subscription on a monthly basis:")
-    st.subheader("Follow us on Instagram and comment LURI.AI on any of our posts for an 80% off promo code for the first month of BriefCase! Redeemable until the end of August.")
+    st.subheader("Follow us on Instagram and comment LURI.AI on any of our posts for an 80% off promo code for the first month of BriefCase!")
+    st.wrote("Limited to the first 100 promo code redeemers. Redeemable until the end of August.")
     with st.expander("View & Confirm Agreement"):
         with st.container(height=300):  # Create a scrollable container
             st.markdown(terms_and_conditions)
