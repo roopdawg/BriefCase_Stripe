@@ -91,41 +91,10 @@ st.set_page_config(
 
 # Sidebar navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ("Monthly Subscription", "Annual Subscription", "Review our Terms & Conditions"))
+page = st.sidebar.radio("Go to", ("Monthly Subscription", "Review our Terms & Conditions"))
 
-# First Subscription option 
-if page == "Annual Subscription":
-    st.title("Renew your BriefCase subscription once a year")
-    st.subheader("Follow us on Instagram and comment LURI.AI on any of our posts for a promo code for 2 free weeks of BriefCase!")
-    with st.expander("View & Confirm Agreement"):
-        with st.container(height=300):  # Create a scrollable container
-            st.markdown(terms_and_conditions)
-
-    if st.checkbox("I agree to the Terms and Conditions", value=terms_state):
-            terms_state = True
-
-     # Show the modal with the legal terms when the terms button is clicked
-    if terms_state:
-       confirm_button = st.button("Confirm & Pay", disabled=not terms_state)
-        # Show the modal with the legal terms when the terms button is clicked
-       if confirm_button:
-            terms_state = False
-            stripe_js_annual = """
-            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-            <stripe-buy-button
-            buy-button-id="buy_btn_1Pmld7BqWfU9o3QlYb7IJn04"	
-            publishable-key="pk_live_51PmkRJBqWfU9o3Ql8aJH7gsPYqjWE7BvMU2pQpjyrfcsGEyFFbpDZt7yBiKbPwDYc4x2e2Tyx7KulO4VjsfoKDM400QrGD3Ylj"
-            ></stripe-buy-button>
-            """.format(stripe_publishable_key)
-            # user next steps for payment
-            st.write("Thanks for confirming the terms and conditions!") 
-            st.write("Once your payment has been processed you will receive a link to BriefCase by 9 am PST the following day. The BriefCase link will be emailed to the email address you associated with your subscription.")
-            st.write("Please note that you will only be able to access BriefCase while logged into the email you provide for payment. If you'd like to link a different email to BriefCase instead, please contact support@luri.ai.")
-            st.components.v1.html(stripe_js_annual, height=400)
-        
-
-# Second subscription option 
-elif page == "Monthly Subscription":
+# Monthly subscription option 
+if page == "Monthly Subscription":
     st.title("Renew your BriefCase subscription on a monthly basis:")
     st.subheader("Follow us on Instagram and comment LURI.AI on any of our posts for a promo code for 2 free weeks of BriefCase!")
     with st.expander("View & Confirm Agreement"):
@@ -159,5 +128,5 @@ elif page == "Monthly Subscription":
             #components.iframe(url,width = 300,height = 500, scrolling=True)
    
 # Terms & Conditions page
-if page == "Review our Terms & Conditions":
+elif page == "Review our Terms & Conditions":
         st.info(terms_and_conditions)
