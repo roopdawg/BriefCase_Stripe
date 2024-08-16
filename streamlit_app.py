@@ -95,7 +95,7 @@ page = st.sidebar.radio("Go to", ("Monthly Subscription", "Review our Terms & Co
 
 # Monthly subscription option 
 if page == "Monthly Subscription":
-    st.title("Renew your BriefCase subscription on a monthly basis:")
+    st.title("You will receive a link to BriefCase by 9 am PST the next day. We are regularly updating our products and will be pushing out more accessible and interactive versions of BriefCase throughout this and next month.")
     with st.expander("View & Confirm Agreement"):
         with st.container(height=300):  # Create a scrollable container
             st.markdown(terms_and_conditions)
